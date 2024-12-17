@@ -1,0 +1,48 @@
+{
+  "name": "strapi-plugin-google-auth-mobile-updated",
+  "version": "1.0.0",
+  "description": "Authenticate via Google using mobile devices",
+  "strapi": {
+    "name": "google-auth-mobile",
+    "description": "This plugin allows authentication via Google using mobile devices",
+    "kind": "plugin",
+    "displayName": "Google Auth Mobile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yardventure/strapi-plugin-google-auth-mobile-updated.git"
+  },
+  "dependencies": {
+    "@strapi/design-system": "^1.6.3",
+    "@strapi/helper-plugin": "^4.6.0",
+    "@strapi/icons": "^1.6.3",
+    "prop-types": "^15.7.2",
+    "google-auth-library": "^9.1.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.6",
+    "@strapi/strapi": "^4.0.0"
+  },
+  "author": {
+    "name": "23devs"
+  },
+  "maintainers": [
+    {
+      "name": "23devs"
+    }
+  ],
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
