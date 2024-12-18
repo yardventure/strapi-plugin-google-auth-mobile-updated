@@ -25,13 +25,23 @@ module.exports = {
     const { access_token } = ctx.request.body;
 
     try {
-      
+      const email = ctx.request.body.email
+      if (email?.includes('@gmail.com')) {
+        const oldUser = await strapi.query('plugin::users-permissions.user').findOne({ where: { email } })
+        if (oldUser && oldUser.provider !== 'google') await strapi.entityService.update(
+          'plugin::users-permissions.user',
+          oldUser.id,
+          {
+            data: {provider: 'google'}
+          }
+        );
+      }
       const user = await strapi
-        .plugin(GOOGLE_AUTH_MOBILE)
-        .service(GOOGLE_AUTH)
-        .connect(access_token);
-        
-      if (tx.request.body.tags) {
+      .plugin(GOOGLE_AUTH_MOBILE)
+      .service(GOOGLE_AUTH)
+      .connect(access_token);
+      
+      if (!user.tags && ctx.request.body.tags) {
         await strapi.entityService.update(
           'plugin::users-permissions.user',
           user.id,
