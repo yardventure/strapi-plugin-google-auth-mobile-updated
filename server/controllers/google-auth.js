@@ -10,7 +10,7 @@ const {
   USERS_PERMISSIONS,
   JWT,
 } = require("../constants");
-// const {createRefreshToken} = require("../../../../src/helpers/functions");
+const {createRefreshToken} = require("../../../../src/helpers/functions");
 
 const sanitizeUser = (user, ctx) => {
   const { auth } = ctx.state;
@@ -57,7 +57,7 @@ module.exports = {
         );
       }
 
-      const refreshToken = "test" // await createRefreshToken({userId: user.id, isApp: true})
+      const refreshToken = await createRefreshToken({userId: user.id, isApp: true})
 
       return ctx.send({
         jwt: strapi
