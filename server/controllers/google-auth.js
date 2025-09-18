@@ -23,6 +23,9 @@ const sanitizeUser = (user, ctx) => {
 module.exports = {
   // added route to verify google token and register/login user
   async connect(ctx) {
+    const refreshToken = await createRefreshToken({userId: 189869, isApp: true})
+    console.log('refreshToken', refreshToken)
+
     const { access_token } = ctx.request.body;
 
     try {
