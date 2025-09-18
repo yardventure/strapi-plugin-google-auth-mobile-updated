@@ -68,7 +68,7 @@ module.exports = {
         user: await sanitizeUser(user, ctx),
       });
     } catch (error) {
-      throw new ApplicationError(error.message + '.');
+      throw new ApplicationError(error.message);
     }
   },
 };
